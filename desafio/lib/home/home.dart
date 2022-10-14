@@ -1,3 +1,5 @@
+import 'package:desafio/home/widgets/app_bar/mobile_app_bar.dart';
+import 'package:desafio/home/widgets/app_bar/web_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -10,9 +12,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
-        appBar: AppBar(
-          
-        ),
+        appBar: constraints.maxWidth < 800
+            ? const PreferredSize(
+                preferredSize: Size(double.infinity, 56),
+                child: MobileAppBar(),
+              )
+            : const PreferredSize(
+                preferredSize: Size(double.infinity, 72),
+                child: WebAppBar(),
+              ),
+        drawer: const Drawer(),
       );
     });
   }
