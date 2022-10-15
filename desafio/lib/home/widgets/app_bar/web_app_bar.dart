@@ -1,3 +1,4 @@
+import 'package:desafio/home/widgets/app_bar/web_app_bar_responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,6 +17,7 @@ class WebAppBar extends StatelessWidget {
           const SizedBox(
             width: 32,
           ),
+          const WebAppBarResponsiveContent(),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.shopping_cart),
@@ -47,15 +49,15 @@ class WebAppBar extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Text('Cadastre-se'),
             style: ElevatedButton.styleFrom(
               primary: Colors.black,
               minimumSize: Size(88, 36),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(2)),
               ),
             ),
+            child: const Text('Cadastre-se'),
           )
         ],
       ),
