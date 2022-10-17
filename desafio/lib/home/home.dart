@@ -1,6 +1,7 @@
 import 'package:desafio/breakpoints.dart';
 import 'package:desafio/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:desafio/home/widgets/app_bar/web_app_bar.dart';
+import 'package:desafio/home/widgets/sections/top_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -27,9 +28,12 @@ class HomePage extends StatelessWidget {
         body: Align(
           alignment: Alignment.topCenter,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1000),
-            child: ListView()
-          ),
+              constraints: const BoxConstraints(maxWidth: 1400),
+              child: ListView(
+                children: [
+                  TopSection(),
+                ],
+              )),
         ),
       );
     });
