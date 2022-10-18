@@ -1,6 +1,7 @@
 import 'package:desafio/breakpoints.dart';
 import 'package:desafio/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:desafio/home/widgets/app_bar/web_app_bar.dart';
+import 'package:desafio/home/widgets/sections/advantages_section.dart';
 import 'package:desafio/home/widgets/sections/top_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
+        backgroundColor: Colors.black,
         appBar: constraints.maxWidth < mobileBreakpoints
             ? const PreferredSize(
                 preferredSize: Size(double.infinity, 56),
@@ -30,8 +32,9 @@ class HomePage extends StatelessWidget {
           child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1400),
               child: ListView(
-                children: [
+                children: const [
                   TopSection(),
+                  AdvantagesSection(),
                 ],
               )),
         ),
