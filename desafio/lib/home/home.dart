@@ -2,6 +2,7 @@ import 'package:desafio/breakpoints.dart';
 import 'package:desafio/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:desafio/home/widgets/app_bar/web_app_bar.dart';
 import 'package:desafio/home/widgets/sections/advantages_section.dart';
+import 'package:desafio/home/widgets/sections/courses_section.dart';
 import 'package:desafio/home/widgets/sections/top_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,7 @@ class HomePage extends StatelessWidget {
                 children: const [
                   TopSection(),
                   AdvantagesSection(),
+                  courseSection(),
                 ],
               )),
         ),
