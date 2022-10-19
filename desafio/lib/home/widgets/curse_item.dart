@@ -1,6 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class CourseItem extends StatelessWidget {
   const CourseItem({Key? key}) : super(key: key);
@@ -17,12 +17,19 @@ class CourseItem extends StatelessWidget {
         const SizedBox(
           height: 4,
         ),
-        const Text(
-          'Criação de Apps Android e ios com Flutter - Crie 16 Apps',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-            color: Colors.white,
+        Flexible(
+          child: LayoutBuilder(
+            builder: (_, constraints) {
+              return const AutoSizeText(
+                'Criação de Apps Android e ios com Flutter - Crie 16 Apps',
+                minFontSize: 3,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.white,
+                ),
+              );
+            },
           ),
         ),
         const Text(
