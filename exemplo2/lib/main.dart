@@ -12,23 +12,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Insta Hora',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       builder: (context, widget) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(
-          context,
-          const HomePage(),
-        ),
-        defaultScale: true,
-        minWidth: 450,
-        breakpoints: [
-          const ResponsiveBreakpoint.resize(450, name: MOBILE),
-          const ResponsiveBreakpoint.resize(700, name: TABLET),
-          const ResponsiveBreakpoint.resize(800, name: DESKTOP),
-        ]
-      ),
+          ClampingScrollWrapper.builder(
+            context,
+            const HomePage(),
+          ),
+          defaultScale: true,
+          defaultName: MOBILE,
+          minWidth: 450,
+          breakpoints: [
+            const ResponsiveBreakpoint.resize(450, name: MOBILE),
+            const ResponsiveBreakpoint.resize(700, name: TABLET),
+            const ResponsiveBreakpoint.resize(800, name: DESKTOP),
+          ]),
     );
   }
 }
