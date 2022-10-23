@@ -1,9 +1,8 @@
 import 'package:exemplo2/pages/widgets/post_widget.dart';
 import 'package:exemplo2/pages/widgets/responsive_app_bar.dart';
+import 'package:exemplo2/pages/widgets/right_panel.dart';
 import 'package:exemplo2/pages/widgets/stories_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,12 +21,19 @@ class HomePage extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 1000,
             ),
-            child: ListView(
-              children: const [
-                StoriesList(),
-                PostWidget(),
-                PostWidget(),
-                PostWidget(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: const [
+                      StoriesList(),
+                      PostWidget(),
+                      PostWidget(),
+                      PostWidget(),
+                    ],
+                  ),
+                ),
+                const RightPanel(),
               ],
             )),
       ),
