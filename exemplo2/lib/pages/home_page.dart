@@ -22,12 +22,19 @@ class HomePage extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 1000,
             ),
-            child: ListView(
-              children: const [
-                StoriesList(),
-                PostWidget(),
-                PostWidget(),
-                PostWidget(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: const [
+                      StoriesList(),
+                      PostWidget(),
+                      PostWidget(),
+                      PostWidget(),
+                    ],
+                  ),
+                ),
+                RightPanel(),
               ],
             )),
       ),
