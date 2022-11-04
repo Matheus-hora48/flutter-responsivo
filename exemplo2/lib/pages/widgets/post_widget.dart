@@ -12,7 +12,7 @@ class PostWidget extends StatelessWidget {
     final desktop = ResponsiveWrapper.of(context).isDesktop;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: desktop ? 35 : 0),
+      padding: EdgeInsets.symmetric(vertical: desktop ? 16 : 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
